@@ -1,4 +1,4 @@
-/* const express = require('express');
+const express = require('express');
 const bcrypt = require('bcryptjs');
 const User = require('../models/User');
 
@@ -22,4 +22,4 @@ router.get('/logout', (req, res) => {
     res.redirect('/');
 });
 
-module.exports = router; */
+module.exports = router;
