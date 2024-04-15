@@ -1,25 +1,27 @@
-<header class="header">
-    <a href="/" class="header__logo">logo</a>
-    <nav class="header__nav">
-        <ul class="header__nav-list">
-            <li class="header__nav-item">
-                <a href="/" class="">Home</a>
+<header class="header navbar navbar-expand-lg navbar-light bg-light">
+    <a href="/" class="navbar-brand">
+        <img src="/img/logo.png" alt="logo" width="80" height="80">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto mr-3">
+            <li class="nav-item mr-2 <%= locals.currentPage === 'Home' ? 'active' : '' %>">
+                <a href="/" class="nav-link"><i class="fas fa-home"></i> Home</a>
             </li> 
-            <li class="header__nav-item">
-                <a href="/about" class="">About</a>
+            <li class="nav-item mr-2 <%= locals.currentPage === 'About' ? 'active' : '' %>">
+                <a href="/about" class="nav-link"><i class="fas fa-info-circle"></i> About</a>
             </li>
-             <li class="header__nav-item">
-                <a href="/contact" class="">Contact</a>
+            <li class="nav-item mr-2 <% if (currentPage === 'Contact') { %>active<% } %>">
+                <a href="/contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
             </li>
         </ul>
-    </nav>
-
+    </div>
     <div class="header__button">
-        <button class="searchBtn" aria-expanded="false">
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">
             Search
-            <?xml version="1.0" ?><svg class="feather feather-search" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></svg>
+            <svg class="feather feather-search" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></svg>
         </button>
     </div>
-
-
 </header>

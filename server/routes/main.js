@@ -7,13 +7,11 @@ router.get("", (req, res) => {
     title: "Blog Post",
     description: "Simple blog post with Express and Pug."
   };  
-
-
-  res.render('index', { locals });
+  res.render('index', { ...locals, currentPage: 'Home' });
 });
 
 router.get("/about", (req, res) => {
-  res.render('about');
+  res.render('about', { currentPage: 'About' });
 });
 
 
