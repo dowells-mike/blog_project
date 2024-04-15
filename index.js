@@ -11,7 +11,7 @@ const authRoutes = require('./server/routes/auth');
 const connectDB = require('./server/config/db');
 
 const app = express();
-const PORT = 5000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 
 //Database Connection
 connectDB();
@@ -34,6 +34,4 @@ app.use('/', require('./server/routes/main'));
   saveUninitialized: false,
 })); */
 
-app.listen(PORT, ()=> {
-  console.log(`App listening on port ${PORT}`);
-});
+app.listen(port, () => console.log(`Server running on port ${port}`));
