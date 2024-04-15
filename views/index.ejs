@@ -9,14 +9,28 @@
     <h2 class="articles__heading">My latest articles</h2>
 
     <% posts.forEach(post => { %>
-        <li>
-            <a href="#">
-                <img src="<%= post.image %>" alt="<%= post.title %>" width="200" height="200">
-                <span><%= post.title %></span>
-                <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
-            </a>
-        </li>
-        <% }) %>
-
-    <a href="#" class="pagination">&lt; View older articles</a>
+        <div class="card mb-4">
+            <img src="<%= post.image %>" class="card-img-top" alt="<%= post.title %>">
+            <div class="card-body">
+                <h5 class="card-title"><%= post.title %></h5>
+                <p class="card-text"><%= post.content.substring(0, 100) %>...</p>
+                <a href="/posts/<%= post._id %>" class="btn btn-primary">Read More</a>
+            </div>
+            <div class="card-footer text-muted">
+                Posted on <%= post.createdAt.toDateString() %>
+            </div>
+        </div>
+    <% }) %>
+    <div class="text-center">
+        <% if (page > 1) { %>
+            <a href="/?page=<%= page - 1 %>" class="btn btn-primary">View Newer Posts</a>
+        <% } else { %>
+            <button class="btn btn-primary" disabled>View Newer Posts</button>
+        <% } %>
+        <% if (page < totalPages) { %>
+            <a href="/?page=<%= page + 1 %>" class="btn btn-primary">View Older Posts</a>
+        <% } else { %>
+            <button class="btn btn-primary" disabled>View Older Posts</button>
+        <% } %>
+    </div>
 </section>
