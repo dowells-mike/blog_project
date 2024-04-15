@@ -112,9 +112,9 @@ router.get('/login', (req, res) => {
 });
 
 // Login Form POST Route
-router.post('/login', async (req, res) => {
+/* router.post('/login', async (req, res) => {
   // Implement login functionality here
-});
+}); */
 
 // Register Page Route
 router.get('/register', (req, res) => {
@@ -122,9 +122,9 @@ router.get('/register', (req, res) => {
 });
 
 // Register Form POST Route
-router.post('/register', async (req, res) => {
+/* router.post('/register', async (req, res) => {
   // Implement registration functionality here
-});
+}); */
 
 
 module.exports = router;
