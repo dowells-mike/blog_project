@@ -3,9 +3,9 @@ require('dotenv').config();
 
 const express = require('express');
 const expressLayout = require('express-ejs-layouts');
+const session = require('express-session');
 
-//admin
-const adminRoutes = require('./server/routes/admin');
+
 
 //Database
 const connectDB = require('./server/config/db');
@@ -15,9 +15,6 @@ const PORT = 5000 || process.env.PORT;
 
 //Database Connection
 connectDB();
-
-//admin use
-app.use(adminRoutes);
 
 app.use(express.static('public'));
 
