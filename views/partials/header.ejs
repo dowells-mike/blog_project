@@ -1,6 +1,6 @@
 <header class="header navbar navbar-expand-lg navbar-light bg-light">
     <a href="/" class="navbar-brand">
-        <img src="/img/logo.png" alt="logo" width="80" height="80">
+        <img src="/img/logo.png" alt="logo" width="90" height="90">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -18,10 +18,14 @@
             </li>
         </ul>
     </div>
-    <div class="header__button">
-        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">
-            Search
-            <svg class="feather feather-search" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></svg>
+    <div class="header__search">
+        <button id="toggle-search" class="btn btn-outline-secondary my-2 my-sm-0" type="submit">
+            <i class="fas fa-search"></i>
         </button>
+        <div id="search-form" class="search-form">
+            <form action="/search" method="get">
+                <input type="text" name="q" placeholder="Search Posts...">
+            </form>
+        </div>
     </div>
 </header>

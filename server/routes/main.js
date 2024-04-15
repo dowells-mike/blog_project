@@ -1,3 +1,9 @@
+let escapeStringRegexp;
+
+import('escape-string-regexp').then((module) => {
+  escapeStringRegexp = module.default;
+});
+
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/Post');
@@ -35,6 +41,24 @@ router.get("/posts/:id", async (req, res) => {
       return res.status(404).send('Post not found');
     }
     res.render('post', { post, currentPage: 'Post' });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('Server Error');
+  }
+});
+
+// Search Route
+router.get("/search", async (req, res) => {
+  if (!escapeStringRegexp) {
+    return res.status(500).send('Server Error');
+  }
+  const query = escapeStringRegexp(req.query.q);
+  try {
+    const posts = await Post.find({ $text: { $search: query } });
+    if (!posts) {
+      return res.status(404).render('search', { posts: [], currentPage: 'Search', query });
+    }
+    res.render('search', { posts, currentPage: 'Search', query });
   } catch (err) {
     console.log(err);
     res.status(500).send('Server Error');

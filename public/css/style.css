@@ -207,33 +207,37 @@ img {
 }
 
 /* SeachBar */
-.searchBar {
-  visibility: hidden;
-  transform: translateY(-100px);
-  background-color: var(--black);
-  padding: 4px 0;
-  position: absolute;
-  left: 0;
-  right: 0;
+.header__search {
+  display: flex;
+  align-items: center;
 }
 
-
-.searchBar.open {
-  transform: translateY(0);
-  transition: transform 0.1s;
+#toggle-search {
+  margin-right: 10px;
 }
 
-.searchBar input {
-  margin: 0;
-  border: 0;
+#search-form {
+  max-width: 0;
+  overflow: hidden;
+  transition: max-width 0.5s ease-in-out;
 }
 
-#searchClose {
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: var(--sepia-light);
-  padding: 15px;
+#search-form form {
+  display: flex;
+  align-items: center;
+}
+
+#search-form input[type="text"] {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 20px;
+  flex: 1;
+  margin-right: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+#search-form input[type="text"]:focus {
+  outline: none;
 }
 
 
