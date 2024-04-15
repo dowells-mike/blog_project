@@ -1,6 +1,7 @@
 <header class="header navbar navbar-expand-lg navbar-light bg-light">
     <a href="/" class="navbar-brand">
         <img src="/img/logo.png" alt="logo" width="90" height="90">
+        Admin Page
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -15,18 +16,12 @@
             </li>
             <li class="nav-item mr-2 <% if (currentPage === 'Contact') { %>active<% } %>">
                 <a href="/contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
-            </li> 
+            </li>
         </ul>
-        
     </div>
-    <div class="header__search">
-        <button id="toggle-search" class="btn btn-outline-secondary my-2 my-sm-0" type="submit">
-            <i class="fas fa-search"></i>
-        </button>
-        <div id="search-form" class="search-form">
-            <form action="/search" method="get">
-                <input type="text" name="q" placeholder="Search Posts...">
-            </form>
-        </div>
+    <div class="header__button">
+        <a href="/admin/logout" class="btn btn-outline-secondary my-2 my-sm-0">
+          Logout
+        </a>
     </div>
 </header>
