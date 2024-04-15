@@ -8,14 +8,15 @@
 <section class="articles">
     <h2 class="articles__heading">My latest articles</h2>
 
-    <ul class="article-ul">
+    <% posts.forEach(post => { %>
         <li>
             <a href="#">
-                <span>Post Title</span>
-                <span class="article-list__date">Date</span>
+                <img src="<%= post.image %>" alt="<%= post.title %>" width="200" height="200">
+                <span><%= post.title %></span>
+                <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
             </a>
         </li>
-    </ul>
+        <% }) %>
 
     <a href="#" class="pagination">&lt; View older articles</a>
 </section>
