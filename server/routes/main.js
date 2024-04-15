@@ -3,6 +3,8 @@ const router = express.Router();
 const Post = require('../models/Post');
 
 //Routes
+
+//Home Page Route
 router.get("", async (req, res) => {
   const locals = {
     title: "Blog Post",
@@ -25,7 +27,21 @@ router.get("", async (req, res) => {
   }
 });
 
+//Single Post Route
+router.get("/posts/:id", async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id);
+    if (!post) {
+      return res.status(404).send('Post not found');
+    }
+    res.render('post', { post, currentPage: 'Post' });
+  } catch (err) {
+    console.log(err);
+    res.status(500).send('Server Error');
+  }
+});
 
+//About Page Route
 router.get("/about", (req, res) => {
   res.render('about', { currentPage: 'About' });
 });

@@ -1,0 +1,7 @@
+<div class="post">
+    <h1 class="post__title"><%= post.title %></h1>
+    <img src="<%= post.image %>" alt="<%= post.title %>" class="post__image">
+    <p class="post__content"><%= post.content %></p>
+    <p class="post__date">Posted on <%= post.createdAt.toDateString() %></p>
+</div>
+<a href="/" class="btn btn-primary">Back to Home</a>
